@@ -1,13 +1,13 @@
 {
   "name": "vue-winbox-test",
-  "description": "TO-DO",
+  "description": "0.0.3",
   "keywords": [
     "vue",
     "signature",
     "pad"
   ],
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "module": "dist/vue-winbox.esm.js",
   "main": "dist/vue-winbox.cjs.js",
   "unpkg": "dist/vue-winbox.global.js",
@@ -23,15 +23,20 @@
     "winbox": "^0.2.0"
   },
   "peerDependencies": {
+    "@linusborg/vue-simple-portal": "^0.1.5",
     "@vue/composition-api": "^1.0.0-beta.1",
     "vue": "^2.0.0 || >=3.0.0-rc.0"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
       "optional": true
+    },
+    "@linusborg/vue-simple-portal": {
+      "optional": true
     }
   },
   "devDependencies": {
+    "@linusborg/vue-simple-portal": "^0.1.5",
     "@types/winbox": "^0.2.1",
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/composition-api": "^1.0.4",
