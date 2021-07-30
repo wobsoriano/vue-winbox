@@ -12,7 +12,7 @@ yarn add vue-winbox
 
 ## Usage (Vue 3)
 
-The native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component is used and you can use `VueWinBox` it out-of-the-box.
+`VueWinBox` works out-of-the-box using the native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component.
 
 ```html
 <template>
@@ -55,7 +55,7 @@ export default defineComponent({
 
 ## Usage (Vue 2)
 
-For Vue 2, [vue-simple-portal](https://github.com/LinusBorg/vue-simple-portal) is recommended as it is the lightest portal component I've found.
+For Vue 2, [vue-simple-portal](https://github.com/LinusBorg/vue-simple-portal) is recommended. Just install it globally and it should work out-of-the-box without setting any additional props.
 
 First, install the component.
 
