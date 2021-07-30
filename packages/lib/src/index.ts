@@ -3,6 +3,7 @@ import {
     isVue2
 } from 'vue-demi'
 import 'winbox';
+import 'winbox/dist/css/themes/modern.min.css'
 
 import VueWinBox from './components/VueWinBox'
 import useWinBox from './composables/useWinBox'

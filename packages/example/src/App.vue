@@ -1,34 +1,50 @@
 <template>
   <VueWinBox ref="winboxRef" :options="options">
-    <div>{{ count }}</div>
+    <Counter @update:count="setTitle" />
   </VueWinBox>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import VueWinBox from 'vue-winbox'
+import Counter from './components/Counter.vue'
 
 export default defineComponent({
   components: {
-    VueWinBox
+    VueWinBox,
+    Counter
   },
   setup() {
-    const count = ref(0)
-    const options = ref({
-      title: 'Current count: 0',
+    const options = {
+      title: 'Count: 0',
       class: 'modern',
-    })
+      x: 'center',
+      y: 'center',
+      width: '50%',
+      height: '50%'
+    }
     const winboxRef = ref()
 
-    setInterval(() => {
-      count.value++
-      winboxRef.value?.winbox?.setTitle('Current count: ' + count.value)
-    }, 500)
+    const setTitle = (count: number) => {
+      winboxRef.value?.winbox?.setTitle('Count: ' + count)
+    }
+
+    const handleResize = () => {
+      winboxRef.value?.winbox?.resize("50%", "50%").move("center", "center")
+    }
+
+    onMounted(() => {
+      window.addEventListener('resize', handleResize)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', handleResize)
+    })
 
     return {
-      count,
       options,
-      winboxRef
+      winboxRef,
+      setTitle
     }
   }
 })
