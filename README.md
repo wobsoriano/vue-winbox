@@ -10,7 +10,7 @@ Vue components inside [WinBox.js](https://github.com/nextapps-de/winbox).
 yarn add vue-winbox
 ```
 
-## Usage
+## Usage (Vue 3)
 
 For Vue 3, the native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component is used and no other customizations required.
 
@@ -49,6 +49,8 @@ export default defineComponent({
 })
 </script>
 ```
+
+## Usage (Vue 2)
 
 For Vue 2, [vue-simple-portal](https://github.com/LinusBorg/vue-simple-portal) is recommended as it is the lightest portal component I've found.
 
