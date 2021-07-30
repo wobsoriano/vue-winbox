@@ -5,9 +5,9 @@
       "packages/*"
     ],
     "scripts": {
-      "dev": "yarn workspace example dev",
-      "lib:watch": "yarn workspace v-signature run build:watch",
-      "lib": "yarn workspace v-signature",
-      "example": "yarn workspace example"
+      "lib:watch": "yarn workspace vue-winbox run build:watch",
+      "lib": "yarn workspace vue-winbox",
+      "example": "yarn workspace example",
+      "remove:node_modules": "rm -rf node_modules && rm -rf packages/lib/node_modules && rm -rf packages/example/node_modules"
     }
 }

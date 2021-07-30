@@ -1,9 +1,9 @@
 import { h as hDemi, isVue2 } from 'vue-demi'
 
 interface Options {
-  props?: Object,
-  domProps?: Object
-  on?: Object
+  props?: Record<any, any>,
+  domProps?: Record<any, any>
+  on?: Record<any, any>
 }
 
 const adaptOnsV3 = (ons: Object) => {
@@ -15,7 +15,7 @@ const adaptOnsV3 = (ons: Object) => {
   }, {})
 }
 
-const h = (type: String | Object, options: Options & any = {}, chidren?: any) => {
+const h = (type: String | Record<any, any>, options: Options & any = {}, chidren?: any) => {
   if (isVue2)
     return hDemi(type, options, chidren)
 
@@ -25,5 +25,11 @@ const h = (type: String | Object, options: Options & any = {}, chidren?: any) =>
   const params = { ...extraOptions, ...props, ...domProps, ...ons }
   return hDemi(type, params, chidren)
 }
+
+const slot = (defaultSlots: any) => {
+  if (typeof defaultSlots == 'function') return defaultSlots()
+  return defaultSlots
+}
+export { slot }
 
 export default h
