@@ -57,10 +57,10 @@ export default defineComponent({
 
 For Vue 2, [vue-simple-portal](https://github.com/LinusBorg/vue-simple-portal) is recommended. Just install it globally and it should work out-of-the-box without setting any additional props.
 
-First, install the component.
+First, install the component together with the `composition-api` plugin.
 
 ```bash
-yarn add vue-simple-portal
+yarn add @vue/composition-api vue-simple-portal
 ```
 
 Then import it in your `main.js` file.
