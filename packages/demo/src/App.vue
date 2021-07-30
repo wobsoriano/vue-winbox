@@ -72,6 +72,7 @@ export default defineComponent({
 }
 
 html, body {
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, "Open Sans", OpenSans, Roboto, Segoe UI, sans-serif;
   background: linear-gradient(135deg, #0d1117, #131820);
 }
