@@ -12,7 +12,7 @@ yarn add vue-winbox
 
 ## Usage (Vue 3)
 
-For Vue 3, the native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component is used and no other customizations required.
+The native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component is used and you can use `VueWinBox` it out-of-the-box.
 
 ```html
 <template>
@@ -106,14 +106,35 @@ export default {
 
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
-`options` | Object | [Reference](https://github.com/nextapps-de/winbox#options) | WinBox options. This is only applied on initial mount.  |
+`options` | Object | [Reference](https://github.com/nextapps-de/winbox#options) | WinBox options. Applied only on mount.  |
 `portalComponent` | String | `portal` | Portal component name. Vue 2 only. |
 `portalSelector` | String | `selector` | Portal component selector attribute. Vue 2 only.  |
 `portalAttributes` | Object | `{}` | Other attributes. Vue 2 only. |
 
 ## Methods
 
-All WinBox.js methods
+To update props and access `WinBox` methods/controls, just add a `ref` to the `VueWinBox` component and use it like this:
+
+```javascript
+// Set the window title
+this.$refs.winboxRef.winbox.setTitle('New title')
+
+// Custom Position / Size
+this.$refs.winboxRef.winbox.resize('50%', '50%').move('center', 'center')
+
+// Add class
+this.$refs.winboxRef.winbox.addClass('modern')
+
+// Focus a window (bring up to front)
+this.$refs.winboxRef.winbox.focus()
+
+// Chaining Methods
+this.$refs.winboxRef.winbox
+    .setTitle('Title')
+    .resize('50%', '50%')
+    .move('center', 'center')
+    .focus()
+```
 
 ## Events
 
