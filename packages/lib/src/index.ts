@@ -18,6 +18,7 @@ if (isVue2) {
 }
 
 export {
-    VueWinBox,
     useWinBox
 }
+
+export default VueWinBox
