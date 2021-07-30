@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "vue": "^3.0.5",
-    "vue-winbox": "^0.0.1"
+    "vue-winbox": "^0.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.5",

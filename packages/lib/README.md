@@ -145,7 +145,7 @@ this.$refs.winboxRef.winbox
 To reinitialize a closed window:
 
 ```javascript
-this.$refs.winboxRef.reinitialize()
+this.$refs.winboxRef.initialize()
 ```
 
 ## Events
