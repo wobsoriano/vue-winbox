@@ -37,6 +37,7 @@ export default defineComponent({
       class: 'modern',
     }
     const winboxRef = ref()
+    const winboxRef2 = ref()
 
     setInterval(() => {
       count.value++
