@@ -7,14 +7,15 @@
   >
     <Counter @update:count="setTitle" />
   </VueWinBox>
-  <div class="container" v-if="!isOpen">
-    <div class="button" @click="initialize">Open</div>
+  <div class="container">
+    <div class="button" v-show="!isOpen" @click="initialize">Open Vue component</div>
+    <div class="button" @click="openUrl" style="margin-top: 10px;">Open Random URL</div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
-import VueWinBox from 'vue-winbox'
+import VueWinBox, { useWinBox } from 'vue-winbox'
 import Counter from './components/Counter.vue'
 
 export default defineComponent({
@@ -33,6 +34,7 @@ export default defineComponent({
     }
     const winboxRef = ref()
     const isOpen = ref(true)
+    const createWinBox = useWinBox()
 
     const setTitle = (count: number) => {
       winboxRef.value?.winbox?.setTitle('Count: ' + count)
@@ -53,13 +55,23 @@ export default defineComponent({
     const initialize = () => {
       winboxRef.value?.initialize()
     }
+    
+    const openUrl = () => {
+      const randomId = Math.floor(Math.random() * 20) + 1
+      createWinBox({
+        title: `Fox #${randomId}`,
+        url: `https://randomfox.ca/images/${randomId}.jpg`,
+        class: 'modern'
+      })
+    }
 
     return {
       options,
       winboxRef,
       setTitle,
       initialize,
-      isOpen
+      isOpen,
+      openUrl
     }
   }
 })
@@ -79,6 +91,7 @@ html, body {
 
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
