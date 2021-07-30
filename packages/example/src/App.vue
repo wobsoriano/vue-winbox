@@ -56,7 +56,8 @@ export default defineComponent({
   padding: 0;
 }
 
-body {
+html, body {
   height: 100vh;
+  background: linear-gradient(135deg, #0d1117, #131820);
 }
 </style>

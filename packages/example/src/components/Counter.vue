@@ -40,7 +40,7 @@ watchEffect(() => {
   align-items: center;
   gap: 2rem;
   height: 100%;
-  background-color: #000;
+  background-color: linear-gradient(135deg, #0d1117, #131820);;
   color: #425a65;
 }
 
