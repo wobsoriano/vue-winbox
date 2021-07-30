@@ -8,7 +8,7 @@
     <Counter @update:count="setTitle" />
   </VueWinBox>
   <div class="container">
-    <div class="button" @click="initialize">Open</div>
+    <div class="button" v-if="!isOpen" @click="initialize">Open</div>
   </div>
 </template>
 
