@@ -8,7 +8,7 @@
     "manager"
   ],
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "module": "dist/vue-winbox.esm.js",
   "main": "dist/vue-winbox.cjs.js",
   "unpkg": "dist/vue-winbox.global.js",
