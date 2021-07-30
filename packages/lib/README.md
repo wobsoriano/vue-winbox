@@ -2,7 +2,7 @@
 
 Vue components inside [WinBox.js](https://github.com/nextapps-de/winbox).
 
-// TODO: Demo
+Demo: https://wobsoriano.github.io/vue-winbox/
 
 ## Install
 
