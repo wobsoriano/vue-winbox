@@ -10,14 +10,6 @@ import h, { slot as slotDemi } from '../utils/h-demi'
 
 declare const WinBox: WinBox.WinBoxConstructor
 
-const emits = [
-    'onmove',
-    'onresize',
-    'onclose',
-    'onfocus',
-    'onblur'
-]
-
 export default defineComponent({
     props: {
         options: {
@@ -40,7 +32,13 @@ export default defineComponent({
             default: () => {}
         }
     },
-    emits,
+    emits: [
+        'onmove',
+        'onresize',
+        'onclose',
+        'onfocus',
+        'onblur'
+    ],
     data() {
         return {
             winbox: null as WinBox | null,
