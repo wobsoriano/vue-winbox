@@ -114,6 +114,7 @@ Name | Type | Default | Description |
 `portalSelector` | String | `selector` | Portal component selector attribute. Vue 2 only.  |
 `portalAttributes` | Object | `{}` | Other attributes. Vue 2 only. |
 
+
 ## Methods
 
 To update props and access `WinBox` methods/controls, just add a `ref` to the `VueWinBox` component and use it like this:
@@ -148,6 +149,7 @@ Name | Type | Default | Description |
 `onfocus` | Function | - | Fired when the window is in focus. |
 `onblur` | Function | - | - |
 `onmove` | Function | - | Fired when the window moves. |
+
 
 ## Vanilla WinBox.js
 

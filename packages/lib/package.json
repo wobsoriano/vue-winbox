@@ -1,6 +1,6 @@
 {
   "name": "vue-winbox",
-  "description": "TO-DO",
+  "description": "A wrapper component for WinBox.js that adds the ability to mount Vue components.",
   "keywords": [
     "vue",
     "winbox",
