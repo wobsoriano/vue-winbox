@@ -46,37 +46,42 @@ export default defineComponent({
             selector: 'vuewinbox-' + nanoid()
         }
     },
+    methods: {
+        initialize() {
+            this.winbox = new WinBox({
+                onresize: (width, height) => {
+                    this.$emit('onresize', {
+                        id: this.winbox?.id,
+                        width,
+                        height
+                    })
+                },
+                onclose: () => {
+                    this.$emit('onclose', { id: this.winbox?.id })
+                    this.initialized = false
+                    return false
+                },
+                onfocus: () => {
+                    this.$emit('onfocus', { id: this.winbox?.id })
+                },
+                onblur: () => {
+                    this.$emit('onblur', { id: this.winbox?.id })
+                },
+                onmove: (x, y) => {
+                    this.$emit('onmove', {
+                        id: this.winbox?.id,
+                        x,
+                        y
+                    })
+                },
+                ...this.options,
+                id: this.selector
+            })
+            this.initialized = true
+        }
+    },
     mounted() {
-        this.winbox = new WinBox({
-            onresize: (width, height) => {
-                this.$emit('onresize', {
-                    id: this.winbox?.id,
-                    width,
-                    height
-                })
-            },
-            onclose: () => {
-                this.$emit('onclose', { id: this.winbox?.id })
-                this.initialized = false
-                return false
-            },
-            onfocus: () => {
-                this.$emit('onfocus', { id: this.winbox?.id })
-            },
-            onblur: () => {
-                this.$emit('onblur', { id: this.winbox?.id })
-            },
-            onmove: (x, y) => {
-                this.$emit('onmove', {
-                    id: this.winbox?.id,
-                    x,
-                    y
-                })
-            },
-            ...this.options,
-            id: this.selector
-        })
-        this.initialized = true
+        this.initialize()
     },
     unmounted() {
         this.winbox?.close()
