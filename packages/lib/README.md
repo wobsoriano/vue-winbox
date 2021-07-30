@@ -119,7 +119,7 @@ Name | Type | Default | Description |
 
 ## Methods
 
-To update props and access `WinBox` methods/controls, just add a `ref` to the `VueWinBox` component and use it like this:
+To update props and access methods/controls, just add a `ref` to the `VueWinBox` component and use it like how you would with `WinBox.js`:
 
 ```javascript
 // Set the window title
