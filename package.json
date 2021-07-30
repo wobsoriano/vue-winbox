@@ -8,6 +8,7 @@
       "lib:watch": "yarn workspace vue-winbox run build:watch",
       "lib": "yarn workspace vue-winbox",
       "example": "yarn workspace example",
-      "remove:node_modules": "rm -rf node_modules && rm -rf packages/lib/node_modules && rm -rf packages/example/node_modules"
+      "clean-modules": "rm -rf node_modules && rm -rf packages/lib/node_modules && rm -rf packages/example/node_modules",
+      "copy-readme": "cp README.md packages/lib/README.md"
     }
 }
