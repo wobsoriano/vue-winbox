@@ -67,9 +67,11 @@ Then import it in your `main.js` file.
 
 ```js
 // main.js
-import Vue from 'vue' // requires Vue >= 2.6
+import Vue from 'vue'
+import VueCompositionAPI from '@vue/composition-api'
 import VuePortal from '@linusborg/vue-simple-portal'
 
+Vue.use(VueCompositionAPI)
 Vue.use(VuePortal, {
   name: 'portal', // optional, use to rename component
 })
