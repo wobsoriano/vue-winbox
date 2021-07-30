@@ -98,7 +98,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.count++
-      this.$refs?.winboxRef.winbox?.setTitle('Current count: ' + this.count)
+      this.$refs?.winboxRef?.winbox?.setTitle('Current count: ' + this.count)
     }, 500)
   }
 }
