@@ -12,7 +12,7 @@ yarn add vue-winbox
 
 ## Usage
 
-For Vue 3, the native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component is used.
+For Vue 3, the native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component is used and no other customizations required.
 
 ```html
 <template>
@@ -50,7 +50,55 @@ export default defineComponent({
 </script>
 ```
 
-Vue 2
+For Vue 2, [vue-simple-portal](https://github.com/LinusBorg/vue-simple-portal) is recommended as it is the lightest portal component I've found.
+
+First, install the component.
+
+```bash
+yarn add vue-simple-portal
+```
+
+Then import it in your `main.js` file.
+
+```js
+// main.js
+import Vue from 'vue' // requires Vue >= 2.6
+import VuePortal from '@linusborg/vue-simple-portal'
+
+Vue.use(VuePortal, {
+  name: 'portal', // optional, use to rename component.
+})
+```
+
+```html
+<template>
+  <VueWinBox ref="winboxRef" :options="options">
+    <div>{{ count }}</div>
+  </VueWinBox>
+</template>
+  
+<script>
+import { defineComponent } from 'vue'
+import VueWinBox from 'vue-winbox'
+
+export default {
+  components: { VueWinBox },
+  data: () => ({
+      count: 0,
+      options: {
+          title: 'Current count: 0',
+          class: 'modern'
+      }
+  }),
+  mounted() {
+    setInterval(() => {
+      this.count++
+      this.$refs?.winboxRef.winbox?.setTitle('Current count: ' + this.count)
+    }, 500)
+  }
+}
+</script>
+```
 
 ## Props
 

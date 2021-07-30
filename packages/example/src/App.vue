@@ -15,14 +15,14 @@ export default defineComponent({
   setup() {
     const count = ref(0)
     const options = ref({
-      title: 'Window',
+      title: 'Current count: 0',
       class: 'modern',
     })
     const winboxRef = ref()
 
     setInterval(() => {
       count.value++
-      winboxRef.value?.winbox?.setTitle('Window XP ' + count.value)
+      winboxRef.value?.winbox?.setTitle('Current count: ' + count.value)
     }, 500)
 
     return {
