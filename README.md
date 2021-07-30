@@ -53,9 +53,9 @@ export default defineComponent({
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
 `options` | Object | [Reference](https://github.com/nextapps-de/winbox#options) | WinBox options. This is only applied on initial mount.  |
-`portalComponent` | String | `portal` | Portal component name |
-`portalSelector` | String | `selector` | Portal component selector attribute  |
-`portalAttributes` | Object | `{}` | Other attributes |
+`portalComponent` | String | `portal` | Portal component name. Vue 2 only. |
+`portalSelector` | String | `selector` | Portal component selector attribute. Vue 2 only.  |
+`portalAttributes` | Object | `{}` | Other attributes. Vue 2 only. |
 
 ## Methods
 
