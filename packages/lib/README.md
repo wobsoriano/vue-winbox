@@ -142,6 +142,12 @@ this.$refs.winboxRef.winbox
     .focus()
 ```
 
+To reinitialize a closed window:
+
+```javascript
+this.$refs.winboxRef.reinitialize()
+```
+
 ## Events
 
 Name | Type | Default | Description |
