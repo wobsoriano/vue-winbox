@@ -1,6 +1,6 @@
 # vue-winbox
 
-Vue components inside [WinBox.js](https://github.com/nextapps-de/winbox).
+A wrapper component for [WinBox.js](https://github.com/nextapps-de/winbox) that adds the ability to mount Vue components.
 
 Demo: https://wobsoriano.github.io/vue-winbox/
 
