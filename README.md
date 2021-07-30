@@ -15,31 +15,27 @@ yarn add vue-winbox
 ```html
 <template>
   <VueWinBox ref="winboxRef" :options="options">
-    <SomeComponent :count="count" />
+    <div>{{ count }}</div>
   </VueWinBox>
 </template>
 
 <script>
 import { defineComponent, ref } from 'vue'
 import VueWinBox from 'vue-winbox'
-import SomeComponent from './components/SomeComponent.vue'
 
 export default defineComponent({
-  components: {
-    VueWinBox,
-    SomeComponent
-  },
+  components: { VueWinBox },
   setup() {
     const count = ref(0)
     const options = {
-      title: 'Window',
+      title: 'Current count: 0',
       class: 'modern',
     }
     const winboxRef = ref()
 
     setInterval(() => {
       count.value++
-      winboxRef.value?.winbox?.setTitle('Count ' + count.value)
+      winboxRef.value?.winbox?.setTitle('Current count: ' + count.value)
     }, 500)
 
     return {
@@ -54,7 +50,12 @@ export default defineComponent({
 
 ## Props
 
-All WinBox.js props
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`options` | Object | [Reference](https://github.com/nextapps-de/winbox#options) | WinBox options. This is only applied on initial mount.  |
+`portalComponent` | String | `portal` | Portal component name |
+`portalSelector` | String | `selector` | Portal component selector attribute  |
+`portalAttributes` | Object | `{}` | Other attributes |
 
 ## Methods
 
@@ -64,7 +65,11 @@ All WinBox.js methods
 
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
-`onresize` | Function | - | Description |
+`onresize` | Function | - | Fired when the window resizes. |
+`onclose` | Function | - | Fired when the window is closing. |
+`onfocus` | Function | - | Fired when the window is in focus. |
+`onblur` | Function | - | - |
+`onmove` | Function | - | Fired when the window moves. |
 
 ## Credits
 
