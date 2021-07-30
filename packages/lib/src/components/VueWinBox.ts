@@ -48,6 +48,11 @@ export default defineComponent({
     },
     methods: {
         initialize() {
+            if (this.initialized) {
+                console.error('Please close the window first before reinitializing.')
+                return
+            }
+
             this.winbox = new WinBox({
                 onresize: (width, height) => {
                     this.$emit('onresize', {
