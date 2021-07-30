@@ -1,5 +1,10 @@
 <template>
-  <VueWinBox ref="winboxRef" :options="options" @onfocus="isOpen = true" @onclose="isOpen = false">
+  <VueWinBox
+    ref="winboxRef"
+    :options="options"
+    @onfocus="isOpen = true"
+    @onclose="isOpen = false"
+  >
     <Counter @update:count="setTitle" />
   </VueWinBox>
   <div class="container">
