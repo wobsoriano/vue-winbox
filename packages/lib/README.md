@@ -17,7 +17,10 @@ yarn add vue-winbox
 ```html
 <template>
   <VueWinBox ref="winboxRef" :options="options" @onmove="onMove">
-    <div>{{ count }}</div>
+    <div>Window 1: {{ count }}</div>
+  </VueWinBox>
+  <VueWinBox ref="winboxRef2" :options="options" @onmove="onMove">
+    <div>Window 2: {{ count }}</div>
   </VueWinBox>
 </template>
 
@@ -38,12 +41,14 @@ export default defineComponent({
     setInterval(() => {
       count.value++
       winboxRef.value?.winbox?.setTitle('Current count: ' + count.value)
+      winboxRef2.value?.winbox?.setTitle('Current count: ' + count.value)
     }, 500)
 
     return {
       count,
       options,
       winboxRef,
+      winboxRef2,
       onMove({ id }) {
           // id is the unique id of the window
       }
