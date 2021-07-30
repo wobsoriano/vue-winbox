@@ -12,7 +12,7 @@ yarn add vue-winbox
 
 ## Usage
 
-For Vue 3, the native [<teleport>](https://v3.vuejs.org/api/built-in-components.html#teleport) is used.
+For Vue 3, the native [teleport](https://v3.vuejs.org/api/built-in-components.html#teleport) component is used.
 
 ```html
 <template>
