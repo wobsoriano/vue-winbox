@@ -12,6 +12,8 @@ yarn add vue-winbox
 
 ## Usage
 
+For Vue 3, the native [<teleport>](https://v3.vuejs.org/api/built-in-components.html#teleport) is used.
+
 ```html
 <template>
   <VueWinBox ref="winboxRef" :options="options">
@@ -47,6 +49,8 @@ export default defineComponent({
 })
 </script>
 ```
+
+Vue 2
 
 ## Props
 
