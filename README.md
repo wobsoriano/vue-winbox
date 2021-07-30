@@ -31,15 +31,15 @@ export default defineComponent({
   },
   setup() {
     const count = ref(0)
-    const options = ref({
+    const options = {
       title: 'Window',
       class: 'modern',
-    })
+    }
     const winboxRef = ref()
 
     setInterval(() => {
       count.value++
-      winboxRef.value.value?.winbox?.setTitle('Count ' + count.value)
+      winboxRef.value?.winbox?.setTitle('Count ' + count.value)
     }, 500)
 
     return {

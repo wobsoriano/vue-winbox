@@ -22,7 +22,7 @@ export default defineComponent({
 
     setInterval(() => {
       count.value++
-      winboxRef.value.value?.winbox?.setTitle('Window XP ' + count.value)
+      winboxRef.value?.winbox?.setTitle('Window XP ' + count.value)
     }, 500)
 
     return {
