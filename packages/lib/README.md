@@ -149,48 +149,6 @@ Name | Type | Default | Description |
 `onblur` | Function | - | - |
 `onmove` | Function | - | Fired when the window moves. |
 
-## Vanilla WinBox.js
-
-Vue 3 users can create a new vanilla `WinBox.js` window using a composable.
-
-```javascript
-import { useWinBox } from 'vue-winbox'
-
-export default defineComponent({
-    setup() {
-        const createWindow = useWinBox()
-
-        const generate = () => {
-            const winbox = createWindow({
-                title: 'Window title',
-                ...
-            })
-            winbox.fullscreen()
-        }
-
-        return {
-            generate
-        }
-    }
-})
-```
-
-Vue 2 users can create via `$WinBox` global variable.
-
-```javascript
-export default {
-    methods: {
-        generate() {
-            const winbox = this.$WinBox({
-                title: 'Window title',
-                ...
-            })   
-            winbox.fullscreen()         
-        }
-    }
-}
-```
-
 ## Credits
 
 - [WinBox.js](https://github.com/nextapps-de/winbox) - Modern HTML5 window manager for the web.
