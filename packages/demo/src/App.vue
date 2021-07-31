@@ -16,7 +16,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import VueWinBox, { useWinBox } from 'vue-winbox'
-import Counter from './components/Counter.vue'
+import Counter from './Counter.vue'
 
 export default defineComponent({
   components: {
@@ -40,17 +40,18 @@ export default defineComponent({
       winboxRef.value?.winbox?.setTitle('Count: ' + count)
     }
 
-    const handleResize = () => {
-      winboxRef.value?.winbox?.resize("50%", "50%").move("center", "center")
-    }
+    // TODO: Check winbox status before resizing
+    // const handleResize = () => {
+    //   winboxRef.value?.winbox?.resize("50%", "50%").move("center", "center")
+    // }
 
-    onMounted(() => {
-      window.addEventListener('resize', handleResize)
-    })
+    // onMounted(() => {
+    //   window.addEventListener('resize', handleResize)
+    // })
 
-    onUnmounted(() => {
-      window.removeEventListener('resize', handleResize)
-    })
+    // onUnmounted(() => {
+    //   window.removeEventListener('resize', handleResize)
+    // })
 
     const initialize = () => {
       winboxRef.value?.initialize()
