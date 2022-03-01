@@ -66,7 +66,7 @@ For Vue 2, [vue-simple-portal](https://github.com/LinusBorg/vue-simple-portal) i
 First, install the component together with the `composition-api` plugin.
 
 ```bash
-yarn add @vue/composition-api vue-simple-portal
+yarn add @vue/composition-api @linusborg/vue-simple-portal
 ```
 
 Then import it in your `main.js` file.
