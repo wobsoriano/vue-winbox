@@ -64,6 +64,7 @@ export default defineComponent({
                 onclose: () => {
                     this.$emit('onclose', { id: this.winbox?.id })
                     this.initialized = false
+                    this.winbox = null
                     return false
                 },
                 onfocus: () => {
