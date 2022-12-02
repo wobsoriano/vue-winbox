@@ -27,6 +27,7 @@ export const VueWinBox = defineComponent({
       selector,
       winbox,
       initialized,
+      initialize,
     })
 
     function initialize() {

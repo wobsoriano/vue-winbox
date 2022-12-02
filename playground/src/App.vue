@@ -50,8 +50,8 @@ const openUrl = () => {
   <VueWinBox
     ref="winboxRef"
     :options="options"
-    @onfocus="isOpen = true"
-    @onclose="isOpen = false"
+    @focus="isOpen = true"
+    @close="isOpen = false"
   >
     <Counter @update:count="setTitle" />
   </VueWinBox>
