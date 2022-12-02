@@ -2,7 +2,7 @@
 
 Vue 3 wrapper for [WinBox.js](https://github.com/nextapps-de/winbox).
 
-Demo: https://wobsoriano.github.io/vue-winbox/
+Demo: https://vue-winbox.vercel.app
 
 ## Install
 
