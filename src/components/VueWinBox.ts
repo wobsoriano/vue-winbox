@@ -12,11 +12,11 @@ export const VueWinBox = defineComponent({
     },
   },
   emits: [
-    'onmove',
-    'onresize',
-    'onclose',
-    'onfocus',
-    'onblur',
+    'move',
+    'resize',
+    'close',
+    'focus',
+    'blur',
   ],
   setup(props, { slots, emit, expose }) {
     const selector = `vuewinbox-${nanoid()}`
@@ -37,26 +37,26 @@ export const VueWinBox = defineComponent({
 
       winbox.value = new WinBox({
         onresize: (width: number, height: number) => {
-          emit('onresize', {
+          emit('resize', {
             id: winbox.value?.id,
             width,
             height,
           })
         },
         onclose: () => {
-          emit('onclose', { id: winbox.value?.id })
+          emit('close', { id: winbox.value?.id })
           initialized.value = false
           winbox.value = null
           return false
         },
         onfocus: () => {
-          emit('onfocus', { id: winbox.value?.id })
+          emit('focus', { id: winbox.value?.id })
         },
         onblur: () => {
-          emit('onblur', { id: winbox.value?.id })
+          emit('blur', { id: winbox.value?.id })
         },
         onmove: (x: number, y: number) => {
-          emit('onmove', {
+          emit('move', {
             id: winbox.value?.id,
             x,
             y,

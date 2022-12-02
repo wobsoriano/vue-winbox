@@ -87,11 +87,11 @@ winboxRef.value.winbox.initialize()
 
 Name | Type | Default | Description |
 ------ | ------ | ------ | ------ |
-`onresize` | Function | - | Fired when the window resizes. |
-`onclose` | Function | - | Fired when the window is closing. |
-`onfocus` | Function | - | Fired when the window is in focus. |
-`onblur` | Function | - | - |
-`onmove` | Function | - | Fired when the window moves. |
+`resize` | Function | - | Fired when the window resizes. |
+`close` | Function | - | Fired when the window is closing. |
+`focus` | Function | - | Fired when the window is in focus. |
+`blur` | Function | - | - |
+`move` | Function | - | Fired when the window moves. |
 
 
 ## Vanilla WinBox.js
