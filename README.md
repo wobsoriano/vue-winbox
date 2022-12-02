@@ -12,7 +12,7 @@ pnpm add vue-winbox
 
 ## Usage
 
-```vue
+```html
 <script setup>
 import { ref } from 'vue'
 import { VueWinBox } from 'vue-winbox'
