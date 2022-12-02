@@ -18,11 +18,13 @@ import { ref } from 'vue'
 import { VueWinBox } from 'vue-winbox'
 
 const count = ref(0)
+const wbRef = ref()
+
+//WinBox options
 const options = {
   title: 'Current count: 0',
   class: 'modern',
 }
-const wbRef = ref()
 
 setInterval(() => {
   count.value++
@@ -36,16 +38,6 @@ setInterval(() => {
   </VueWinBox>
 </template>
 ```
-
-## Props
-
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`options` | Object | [Reference](https://github.com/nextapps-de/winbox#options) | WinBox options. Applied only on mount.  |
-`portalComponent` | String | `portal` | Portal component name. Vue 2 only. |
-`portalSelector` | String | `selector` | Portal component selector attribute. Vue 2 only.  |
-`portalAttributes` | Object | `{}` | Other attributes. Vue 2 only. |
-
 
 ## Methods
 
