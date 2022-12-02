@@ -1,5 +1,5 @@
 import type { PropType } from 'vue'
-import { Teleport, defineComponent, h, onMounted, onUnmounted, ref } from 'vue'
+import { Teleport, defineComponent, h, onMounted, onScopeDispose, ref } from 'vue'
 import { nanoid } from 'nanoid'
 
 declare const WinBox: WinBox.WinBoxConstructor
@@ -9,6 +9,10 @@ export const VueWinBox = defineComponent({
     options: {
       type: Object as PropType<WinBox.Params>,
       required: true,
+    },
+    openOnMount: {
+      type: Boolean,
+      default: true,
     },
   },
   emits: [
@@ -70,10 +74,13 @@ export const VueWinBox = defineComponent({
     }
 
     onMounted(() => {
+      if (!props.openOnMount)
+        return
       initialize()
     })
 
-    onUnmounted(() => {
+    onScopeDispose(() => {
+      // This causes errors like https://github.com/wobsoriano/vue-winbox/issues/10
       winbox.value?.close()
     })
 
