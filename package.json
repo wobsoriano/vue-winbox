@@ -1,6 +1,6 @@
 {
   "name": "vue-winbox",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "packageManager": "pnpm@7.16.1",
   "description": "",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
