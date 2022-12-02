@@ -22,22 +22,17 @@ const options = {
   title: 'Current count: 0',
   class: 'modern',
 }
-const winboxRef = ref()
-const winboxRef2 = ref()
+const wbRef = ref()
 
 setInterval(() => {
   count.value++
-  winboxRef.value?.winbox?.setTitle(`Current count: ${count.value}`)
-  winboxRef2.value?.winbox?.setTitle(`Current count: ${count.value}`)
+  wbRef.value?.winbox?.setTitle(`Current count: ${count.value}`)
 }, 500)
 </script>
 
 <template>
-  <VueWinBox ref="winboxRef" :options="options" @onmove="onMove">
+  <VueWinBox ref="wbRef" :options="options" @onmove="onMove">
     <div>Window 1: {{ count }}</div>
-  </VueWinBox>
-  <VueWinBox ref="winboxRef2" :options="options" @onmove="onMove">
-    <div>Window 2: {{ count }}</div>
   </VueWinBox>
 </template>
 ```
@@ -58,19 +53,19 @@ To update props and access methods/controls, just add a `ref` to the `VueWinBox`
 
 ```ts
 // Set the window title
-winboxRef.value.winbox.setTitle('New title')
+wbRef.value.winbox.setTitle('New title')
 
 // Custom Position / Size
-winboxRef.value.winbox.resize('50%', '50%').move('center', 'center')
+wbRef.value.winbox.resize('50%', '50%').move('center', 'center')
 
 // Add class
-winboxRef.value.winbox.addClass('modern')
+wbRef.value.winbox.addClass('modern')
 
 // Focus a window (bring up to front)
-winboxRef.value.winbox.focus()
+wbRef.value.winbox.focus()
 
 // Chaining Methods
-winboxRef.value.winbox
+wbRef.value.winbox
   .setTitle('Title')
   .resize('50%', '50%')
   .move('center', 'center')
@@ -80,7 +75,7 @@ winboxRef.value.winbox
 To reinitialize a closed window:
 
 ```javascript
-winboxRef.value.winbox.initialize()
+wbRef.value.winbox.initialize()
 ```
 
 ## Events
