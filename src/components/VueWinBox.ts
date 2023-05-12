@@ -1,5 +1,5 @@
 import type { PropType } from 'vue'
-import { Teleport, defineComponent, h, onMounted, onScopeDispose, ref } from 'vue'
+import { Teleport, defineComponent, h, onMounted, onScopeDispose, ref, toRaw } from 'vue'
 import { nanoid } from 'nanoid'
 
 declare const WinBox: WinBox.WinBoxConstructor
@@ -81,7 +81,9 @@ export const VueWinBox = defineComponent({
 
     onScopeDispose(() => {
       // This causes errors like https://github.com/wobsoriano/vue-winbox/issues/10
-      winbox.value?.close()
+      // winbox.value?.close()      
+      // Fixed
+      toRaw(winbox.value)?.close()
     })
 
     return () => initialized.value

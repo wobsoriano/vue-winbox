@@ -44,6 +44,7 @@ const openUrl = () => {
     class: 'modern',
   })
 }
+const visible = ref(false)
 </script>
 
 <template>
@@ -55,6 +56,16 @@ const openUrl = () => {
   >
     <Counter @update:count="setTitle" />
   </VueWinBox>
+
+  <div v-if="visible">
+    <VueWinBox :options="{
+      title: `Fox #1`,
+      url: `https://randomfox.ca/images/1.jpg`,
+      class: 'modern',
+    }" openOnMount @close="visible = false">
+    </VueWinBox>
+  </div>
+
   <div class="container">
     <div v-show="!isOpen" class="button" @click="initialize">
       Open Vue component
@@ -62,6 +73,14 @@ const openUrl = () => {
     <div class="button" style="margin-top: 10px;" @click="openUrl">
       Open Random URL
     </div>
+
+    <div v-show="!visible" class="button" style="margin-top: 10px;" @click="() => visible = true">
+      Parent Dom Visible
+    </div>
+    <div v-show="visible" class="button" style="margin-top: 10px;" @click="() => visible = false">
+      Parent Dom Hidden
+    </div>
+    
   </div>
 </template>
 
