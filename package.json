@@ -38,7 +38,7 @@
     "vue": ">=3.2.0"
   },
   "dependencies": {
-    "nanoid": "^4.0.0",
+    "nanoid": "^4.0.2",
     "winbox": "^0.2.6"
   },
   "devDependencies": {
