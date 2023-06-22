@@ -15,7 +15,7 @@ const winboxRef = ref()
 const isOpen = ref(true)
 const createWinBox = useWinBox()
 
-const setTitle = (count: number) => {
+function setTitle(count: number) {
   winboxRef.value?.winbox?.setTitle(`Count: ${count}`)
 }
 
@@ -32,11 +32,11 @@ const setTitle = (count: number) => {
 //   window.removeEventListener('resize', handleResize)
 // })
 
-const initialize = () => {
+function initialize() {
   winboxRef.value?.initialize()
 }
 
-const openUrl = () => {
+function openUrl() {
   const randomId = Math.floor(Math.random() * 20) + 1
   createWinBox({
     title: `Fox #${randomId}`,
@@ -58,12 +58,13 @@ const visible = ref(false)
   </VueWinBox>
 
   <div v-if="visible">
-    <VueWinBox :options="{
-      title: `Fox #1`,
-      url: `https://randomfox.ca/images/1.jpg`,
-      class: 'modern',
-    }" openOnMount @close="visible = false">
-    </VueWinBox>
+    <VueWinBox
+      :options="{
+        title: `Fox #1`,
+        url: `https://randomfox.ca/images/1.jpg`,
+        class: 'modern',
+      }" open-on-mount @close="visible = false"
+    />
   </div>
 
   <div class="container">
@@ -80,7 +81,6 @@ const visible = ref(false)
     <div v-show="visible" class="button" style="margin-top: 10px;" @click="() => visible = false">
       Parent Dom Hidden
     </div>
-    
   </div>
 </template>
 

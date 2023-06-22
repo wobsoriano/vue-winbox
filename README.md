@@ -88,7 +88,7 @@ import { useWinBox } from 'vue-winbox'
 
 const createWindow = useWinBox()
 
-const generate = () => {
+function generate() {
   const winbox = createWindow({
     title: 'Window title',
   })

@@ -7,11 +7,11 @@ const emit = defineEmits<{
 
 const count = ref(0)
 
-const increment = () => {
+function increment() {
   count.value++
 }
 
-const decrement = () => {
+function decrement() {
   if (count.value === 0)
     return
   count.value--

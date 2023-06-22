@@ -27,8 +27,8 @@
     "dist"
   ],
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm",
-    "build": "pnpm build-fast --dts-resolve",
+    "build": "tsup",
+    "dev": "tsup --watch --onSuccess \"pnpm --filter playground dev\"",
     "lint": "eslint .",
     "prepublishOnly": "pnpm build",
     "release": "bumpp && npm publish",
