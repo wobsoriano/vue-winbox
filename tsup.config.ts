@@ -6,9 +6,4 @@ export default defineConfig({
   splitting: false,
   clean: true,
   dts: true,
-  // outExtension({ format }) {
-  //   return {
-  //     js: format === 'esm' ? '.mjs' : '.js',
-  //   }
-  // },
 })
