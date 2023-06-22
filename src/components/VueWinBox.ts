@@ -1,4 +1,4 @@
-import type { PropType } from 'vue'
+import type { Component, PropType } from 'vue'
 import { Teleport, defineComponent, h, onMounted, onScopeDispose, ref, toRaw } from 'vue'
 import { nanoid } from 'nanoid'
 
@@ -84,8 +84,7 @@ export const VueWinBox = defineComponent({
     })
 
     return () => initialized.value
-    // @ts-expect-error: TODO
-      ? h(Teleport, {
+      ? h(Teleport as unknown as Component, {
         to: `#${selector} .wb-body`,
       }, slots.default?.())
       : null
