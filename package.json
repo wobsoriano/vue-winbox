@@ -1,7 +1,7 @@
 {
   "name": "vue-winbox",
   "version": "0.2.2",
-  "packageManager": "pnpm@7.16.1",
+  "packageManager": "pnpm@8.6.3",
   "description": "",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "license": "MIT",
@@ -42,13 +42,13 @@
     "winbox": "^0.2.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.27.0",
+    "@antfu/eslint-config": "^0.39.5",
     "@types/winbox": "^0.2.1",
-    "bumpp": "^8.2.1",
-    "eslint": "^8.26.0",
-    "tsup": "6.0.1",
-    "typescript": "^4.7.4",
-    "vue": "^3.2.45"
+    "bumpp": "^9.1.1",
+    "eslint": "^8.43.0",
+    "tsup": "7.0.0",
+    "typescript": "^5.1.3",
+    "vue": "^3.3.4"
   },
   "eslintConfig": {
     "extends": "@antfu"
