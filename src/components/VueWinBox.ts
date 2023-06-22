@@ -80,9 +80,6 @@ export const VueWinBox = defineComponent({
     })
 
     onScopeDispose(() => {
-      // This causes errors like https://github.com/wobsoriano/vue-winbox/issues/10
-      // winbox.value?.close()      
-      // Fixed
       toRaw(winbox.value)?.close()
     })
 
